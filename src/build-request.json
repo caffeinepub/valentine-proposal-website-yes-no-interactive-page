@@ -1,0 +1,131 @@
+{
+  "kind": "build_request",
+  "title": "Add spicy/dirty jokes, tougher 'No' interaction, an 'I love you' ending, and 'free passes' coupons",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "text": "Add an explicit, user-controlled toggle for “Spicy (18+) mode” so that dirty/spicy jokes and the adult-themed “free passes” content are only shown after the user intentionally enables the toggle (default OFF). All user-facing text must be in clear English.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages-4"
+        ],
+        "quotes": [
+          "Can u add some dirty jokes"
+        ]
+      },
+      "acceptanceCriteria": [
+        "There is a clearly labeled toggle (or button) to enable “Spicy (18+) mode”, and it is OFF by default.",
+        "When Spicy (18+) mode is OFF, no dirty/spicy jokes or adult-themed passes are visible anywhere in the experience.",
+        "When Spicy (18+) mode is ON, the experience can show the requested dirty/spicy jokes and the requested adult-themed passes section.",
+        "All copy remains readable English and keeps Catherine’s name consistent where applicable."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Add a small set of dirty/spicy jokes (English) to the Valentine experience, shown only when Spicy (18+) mode is enabled. Integrate them into an existing UI surface (e.g., an optional reveal card similar to the “sweet note” interaction), so they feel playful and do not disrupt the core Yes/No flow.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages-4"
+        ],
+        "quotes": [
+          "Can u add some dirty jokes"
+        ]
+      },
+      "acceptanceCriteria": [
+        "With Spicy (18+) mode ON, the user can reveal a random dirty/spicy joke from a curated list.",
+        "With Spicy (18+) mode OFF, the dirty/spicy jokes UI is not shown.",
+        "The jokes are presented as short, readable lines (no broken layout on mobile)."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Enhance the “No” path so it feels like “no is not an option” and “more stuff happens” when No is pressed, while keeping the flow usable and not confusing. Escalate messaging and interactions based on how many times the user attempts to say No.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages-4"
+        ],
+        "quotes": [
+          "can u make more stuff happend when no is pressed make it as saying no is not an options"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The No path includes at least one explicit line communicating the idea “No is not an option” (in clear English).",
+        "The No experience escalates with additional reactions as the No attempt/click count increases (e.g., more intense persuasive copy, additional micro-animations, additional prompts).",
+        "The app never becomes stuck: the user can still proceed by selecting Yes, and there remains a clear way to back out/reset."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Make the “No” button harder to click on the main question screen by adding a playful evasive behavior (e.g., shifting position on hover/tap/near-pointer) that escalates with repeated attempts, while still allowing it to be clicked eventually.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages-4"
+        ],
+        "quotes": [
+          "and its hard to click"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On the question screen, the No button exhibits an evasive behavior that makes it harder (but not impossible) to click.",
+        "The evasive behavior escalates as the user keeps trying (e.g., larger moves, more frequent moves, brief dodges).",
+        "The UI remains stable on mobile (tap targets remain visible; No does not move off-screen).",
+        "Yes remains easy to click and unaffected."
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Add an explicit ending line that says “I love you” in the success/ending content (post-Yes), in clear English.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages-4"
+        ],
+        "quotes": [
+          "Say i love you in the end"
+        ]
+      },
+      "acceptanceCriteria": [
+        "After the user clicks Yes, the success screen includes a clear, visible line that says “I love you”.",
+        "The “I love you” line is part of the normal reading flow on the success screen (not hidden behind a toggle)."
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Add a playful “free passes” / coupon-style section in the post-Yes success state that includes the requested passes (e.g., “Dick Pass”, “Kiss Pass”, “Feet Pass”, and a “Whatever you say” card). The adult-themed passes must only be shown when Spicy (18+) mode is enabled; non-explicit passes may be shown regardless.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages-4"
+        ],
+        "quotes": [
+          "gift free passes like dick pass, kiss pass,feet pass,whatever u say card etc"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The post-Yes success screen includes a clearly titled “Free Passes” (or equivalent) section styled like redeemable coupons/cards.",
+        "The section includes at minimum: “Kiss Pass”, “Feet Pass”, and a “Whatever you say” card.",
+        "The requested explicit “Dick Pass” is only visible when Spicy (18+) mode is ON.",
+        "The passes render cleanly on mobile (stacked layout) and desktop (grid/row layout), with consistent theme styling."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Keep the application as a single-page experience; do not introduce new backend services or external integrations.",
+    "All user-facing text added/changed for this request must be in English."
+  ],
+  "nonGoals": [
+    "No new backend persistence or Motoko features are required for these changes.",
+    "No third-party auth providers or external APIs.",
+    "No real-time messaging/chat features."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

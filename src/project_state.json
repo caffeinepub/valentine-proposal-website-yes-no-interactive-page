@@ -1,0 +1,212 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 9,
+  "summary": "Valentine proposal single-page website with interactive Yes/No flow, personalized to ask Catherine, expanding with long-distance/online-themed interactions and additional edgy/adult-humor content requests (dirty jokes), more intense 'No' button behaviors, an 'I love you' ending, and a 'free passes' gag section.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-build-a-single-page-valentine-proposal-website-that-displays-a-romantic-message-asking-the-user-s-girlfriend-to-be-their-valentine-with-clear-readable-english-user-facing-copy",
+      "title": "Build a single-page Valentine proposal website that displays a romantic message asking the user's girlfriend to be their valentine, with clear, readable English user-facing copy.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-interactive-yes-no-choice-flow-provide-two-buttons-yes-and-no-clicking-yes-shows-a-celebratory-success-state-clicking-no-shows-a-playful-alternate-state-and-continues-to-encourage-a-yes-outcome-without-being-broken-or-confusing",
+      "title": "Add an interactive Yes/No choice flow: provide two buttons (\"Yes\" and \"No\"); clicking \"Yes\" shows a celebratory success state; clicking \"No\" shows a playful alternate state and continues to encourage a \"Yes\" outcome without being broken or confusing.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-and-apply-a-coherent-romantic-visual-theme-warm-palette-typography-spacing-and-components-and-enforce-it-consistently-across-the-page",
+      "title": "Create and apply a coherent romantic visual theme (warm palette, typography, spacing, and components) and enforce it consistently across the page.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-lightweight-client-side-celebratory-animation-for-the-yes-success-state-e-g-floating-hearts-confetti-implemented-with-css-canvas-that-performs-well-on-mobile",
+      "title": "Add a lightweight, client-side celebratory animation for the \"Yes\" success state (e.g., floating hearts/confetti implemented with CSS/Canvas) that performs well on mobile.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-required-static-images-and-render-them-from-the-frontend-as-local-assets-under-frontend-public-assets-generated-no-backend-image-routing",
+      "title": "Generate required static images and render them from the frontend as local assets under frontend/public/assets/generated (no backend image routing).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-personalize-the-valentine-proposal-copy-so-the-main-prompt-explicitly-asks-catherine-will-u-be-my-valentine-and-ensure-catherine-s-name-is-used-consistently-in-the-question-and-supporting-romantic-text-where-appropriate",
+      "title": "Personalize the Valentine proposal copy so the main prompt explicitly asks: \"Catherine, will u be my valentine?\" and ensure Catherine’s name is used consistently in the question and supporting romantic text where appropriate.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-additional-creative-interactive-functions-beyond-the-current-yes-no-flow-to-make-the-experience-feel-more-fun-and-unique-while-keeping-the-page-simple-and-not-confusing-e-g-optional-playful-interactions-on-the-question-screen-and-or-an-expanded-celebratory-interaction-after-yes",
+      "title": "Add additional creative interactive functions beyond the current Yes/No flow to make the experience feel more fun and unique, while keeping the page simple and not confusing (e.g., optional playful interactions on the question screen and/or an expanded celebratory interaction after \"Yes\").",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-valentine-experience-copy-to-reflect-a-long-distance-online-first-relationship-while-keeping-catherine-s-name-consistent-and-keeping-all-user-facing-text-in-clear-english",
+      "title": "Update the Valentine experience copy to reflect a long-distance, online-first relationship while keeping Catherine’s name consistent and keeping all user-facing text in clear English.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-non-confusing-more-fun-questions-mini-flow-that-works-fully-online-after-the-user-clicks-yes-allow-the-user-to-answer-a-short-sequence-of-playful-long-distance-prompts-e-g-choose-a-virtual-date-vibe-pick-a-time-for-a-video-call-choose-a-shared-online-activity-with-a-clear-way-to-skip-exit-back-to-the-main-success-content",
+      "title": "Add a simple, non-confusing \"more fun questions\" mini-flow that works fully online: after the user clicks \"Yes\", allow the user to answer a short sequence of playful long-distance prompts (e.g., choose a virtual date vibe, pick a time for a video call, choose a shared online activity), with a clear way to skip/exit back to the main success content.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-virtual-kisses-interaction-that-works-online-provide-a-button-and-or-tap-area-that-triggers-animated-kiss-marks-in-addition-to-hearts-that-appear-at-click-tap-positions-and-float-fade-out-smoothly-similar-in-spirit-to-the-existing-tap-to-hearts-interaction",
+      "title": "Implement a \"virtual kisses\" interaction that works online: provide a button and/or tap area that triggers animated kiss marks (in addition to hearts) that appear at click/tap positions and float/fade out smoothly, similar in spirit to the existing tap-to-hearts interaction.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-post-yes-date-idea-suggestions-long-distance-compatible-by-replacing-augmenting-the-existing-list-with-online-virtual-date-ideas-e-g-video-call-movie-night-online-games-virtual-dinner-watch-party",
+      "title": "Make the post-\"Yes\" date-idea suggestions long-distance compatible by replacing/augmenting the existing list with online/virtual date ideas (e.g., video-call movie night, online games, virtual dinner, watch party).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-explicit-user-controlled-toggle-for-spicy-18-mode-so-that-dirty-spicy-jokes-and-the-adult-themed-free-passes-content-are-only-shown-after-the-user-intentionally-enables-the-toggle-default-off-all-user-facing-text-must-be-in-clear-english",
+      "title": "Add an explicit, user-controlled toggle for “Spicy (18+) mode” so that dirty/spicy jokes and the adult-themed “free passes” content are only shown after the user intentionally enables the toggle (default OFF). All user-facing text must be in clear English.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-small-set-of-dirty-spicy-jokes-english-to-the-valentine-experience-shown-only-when-spicy-18-mode-is-enabled-integrate-them-into-an-existing-ui-surface-e-g-an-optional-reveal-card-similar-to-the-sweet-note-interaction-so-they-feel-playful-and-do-not-disrupt-the-core-yes-no-flow",
+      "title": "Add a small set of dirty/spicy jokes (English) to the Valentine experience, shown only when Spicy (18+) mode is enabled. Integrate them into an existing UI surface (e.g., an optional reveal card similar to the “sweet note” interaction), so they feel playful and do not disrupt the core Yes/No flow.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enhance-the-no-path-so-it-feels-like-no-is-not-an-option-and-more-stuff-happens-when-no-is-pressed-while-keeping-the-flow-usable-and-not-confusing-escalate-messaging-and-interactions-based-on-how-many-times-the-user-attempts-to-say-no",
+      "title": "Enhance the “No” path so it feels like “no is not an option” and “more stuff happens” when No is pressed, while keeping the flow usable and not confusing. Escalate messaging and interactions based on how many times the user attempts to say No.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-no-button-harder-to-click-on-the-main-question-screen-by-adding-a-playful-evasive-behavior-e-g-shifting-position-on-hover-tap-near-pointer-that-escalates-with-repeated-attempts-while-still-allowing-it-to-be-clicked-eventually",
+      "title": "Make the “No” button harder to click on the main question screen by adding a playful evasive behavior (e.g., shifting position on hover/tap/near-pointer) that escalates with repeated attempts, while still allowing it to be clicked eventually.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-explicit-ending-line-that-says-i-love-you-in-the-success-ending-content-post-yes-in-clear-english",
+      "title": "Add an explicit ending line that says “I love you” in the success/ending content (post-Yes), in clear English.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-playful-free-passes-coupon-style-section-in-the-post-yes-success-state-that-includes-the-requested-passes-e-g-dick-pass-kiss-pass-feet-pass-and-a-whatever-you-say-card-the-adult-themed-passes-must-only-be-shown-when-spicy-18-mode-is-enabled-non-explicit-passes-may-be-shown-regardless",
+      "title": "Add a playful “free passes” / coupon-style section in the post-Yes success state that includes the requested passes (e.g., “Dick Pass”, “Kiss Pass”, “Feet Pass”, and a “Whatever you say” card). The adult-themed passes must only be shown when Spicy (18+) mode is enabled; non-explicit passes may be shown regardless.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website that asks the user's girlfriend to be their valentine.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Personalize the proposal copy to ask: \"Catherine, will u be my valentine?\" (use the name Catherine throughout the page as appropriate).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add more creative interactive functions beyond the basic Yes/No flow to make the experience feel more fun and unique.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Adapt the experience for a long-distance relationship context (online/virtual-first framing and interactions).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add a 'virtual kisses' interactive effect/interaction as part of the playful/celebratory experience.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Include additional fun questions/prompts within the flow (beyond the initial Valentine question) while keeping it simple and not confusing.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add dirty/adult-humor jokes into the Valentine experience copy.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Enhance the 'No' path with more events/interactions (e.g., message that 'no is not an option') and make the No button harder to click.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add an explicit ending line/message that says \"I love you\".",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add a playful 'free passes' / coupon-style section (e.g., kiss pass, feet pass, 'whatever you say' card, and other requested passes).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Valentine Proposal Website (Yes/No Interactive Page)",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

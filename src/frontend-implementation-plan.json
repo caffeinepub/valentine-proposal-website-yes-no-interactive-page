@@ -1,0 +1,135 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Spicy mode gating, spicy jokes, tougher No flow, I-love-you ending, and coupon-style free passes",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "summary": "Add an explicit Spicy (18+) mode toggle (default OFF) that gates all adult-themed content in clear English.",
+      "acceptanceCriteria": [
+        "There is a clearly labeled toggle (or button) to enable “Spicy (18+) mode”, and it is OFF by default.",
+        "When Spicy (18+) mode is OFF, no dirty/spicy jokes or adult-themed passes are visible anywhere in the experience.",
+        "When Spicy (18+) mode is ON, the experience can show the requested dirty/spicy jokes and the requested adult-themed passes section.",
+        "All copy remains readable English and keeps Catherine’s name consistent where applicable."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useSpicyMode.ts",
+          "operation": "create",
+          "description": "Create a small hook to manage “Spicy (18+) mode” state with a safe default of OFF and optional persistence (e.g., localStorage) so gating is consistent across the single-page flow."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Lift Spicy (18+) mode state to the top-level app (using the new hook) and pass it down to QuestionState and YesSuccessState so adult content can be consistently gated across the experience."
+        },
+        {
+          "path": "frontend/src/components/valentine/QuestionState.tsx",
+          "operation": "modify",
+          "description": "Thread Spicy (18+) mode props into the question screen and wire them into QuestionExtras so the toggle is visible and user-controlled on the main experience surface. Use shadcn-ui components already present in the project for consistent UI (e.g., Switch/Label and Card/Button as needed). Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Add a curated set of spicy/dirty jokes revealed from an existing playful UI surface, shown only when Spicy mode is enabled.",
+      "acceptanceCriteria": [
+        "With Spicy (18+) mode ON, the user can reveal a random dirty/spicy joke from a curated list.",
+        "With Spicy (18+) mode OFF, the dirty/spicy jokes UI is not shown.",
+        "The jokes are presented as short, readable lines (no broken layout on mobile)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/QuestionExtras.tsx",
+          "operation": "modify",
+          "description": "Add a gated “Reveal a spicy joke (18+)” interaction similar to the existing sweet-note reveal: keep jokes in a curated in-file list, reveal a random short line on demand, and render nothing related to spicy jokes when Spicy mode is OFF. Use shadcn-ui Card/Button styling for the reveal UI to match the existing sweet-note pattern. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/valentine/QuestionState.tsx",
+          "operation": "modify",
+          "description": "Wire Spicy mode props into QuestionExtras so the spicy joke reveal appears only when enabled, without changing the core Yes/No flow. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Escalate the “No” path with clearer ‘No is not an option’ messaging and additional reactions based on No attempt count, while preserving an easy Yes path and a reset/back out.",
+      "acceptanceCriteria": [
+        "The No path includes at least one explicit line communicating the idea “No is not an option” (in clear English).",
+        "The No experience escalates with additional reactions as the No attempt/click count increases (e.g., more intense persuasive copy, additional micro-animations, additional prompts).",
+        "The app never becomes stuck: the user can still proceed by selecting Yes, and there remains a clear way to back out/reset."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/NoPlayfulState.tsx",
+          "operation": "modify",
+          "description": "Expand the escalating No experience by adding at least one explicit ‘No is not an option’ line and additional staged reactions/prompts as clickCount increases (e.g., stronger persuasive copy, extra hint text, optional micro-animations using existing utility classes), while keeping ‘Okay, Yes!’ and ‘Go Back’ clearly available so the user can always proceed or reset."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure No click counting continues to drive escalation reliably and that resetting/backing out clears escalation state so the flow remains usable and never gets stuck."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Make the No button playfully evasive on the main question screen, escalating with attempts but staying on-screen and still clickable eventually.",
+      "acceptanceCriteria": [
+        "On the question screen, the No button exhibits an evasive behavior that makes it harder (but not impossible) to click.",
+        "The evasive behavior escalates as the user keeps trying (e.g., larger moves, more frequent moves, brief dodges).",
+        "The UI remains stable on mobile (tap targets remain visible; No does not move off-screen).",
+        "Yes remains easy to click and unaffected."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/QuestionState.tsx",
+          "operation": "modify",
+          "description": "Implement an evasive No button behavior on hover/tap/near-pointer using a bounded container (clamp movement so the button never leaves the visible card area). Escalate dodge distance/frequency based on attempted interactions, but introduce a cap/fallback so the button can still be clicked eventually. Keep the Yes button unchanged and consistently accessible."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "If needed for escalation consistency, pass a No-attempt count into QuestionState (separate from the No-state clickCount) or reset it on state changes so the question screen behavior remains predictable."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Add a clear “I love you” line to the post-Yes success content in normal reading flow.",
+      "acceptanceCriteria": [
+        "After the user clicks Yes, the success screen includes a clear, visible line that says “I love you”.",
+        "The “I love you” line is part of the normal reading flow on the success screen (not hidden behind a toggle)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/YesSuccessState.tsx",
+          "operation": "modify",
+          "description": "Insert a clearly visible line that says “I love you” within the main success copy so it appears in the normal reading flow and remains readable on mobile and desktop."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Add a coupon-style “Free Passes” section on the post-Yes success screen, with explicit passes gated by Spicy mode.",
+      "acceptanceCriteria": [
+        "The post-Yes success screen includes a clearly titled “Free Passes” (or equivalent) section styled like redeemable coupons/cards.",
+        "The section includes at minimum: “Kiss Pass”, “Feet Pass”, and a “Whatever you say” card.",
+        "The requested explicit “Dick Pass” is only visible when Spicy (18+) mode is ON.",
+        "The passes render cleanly on mobile (stacked layout) and desktop (grid/row layout), with consistent theme styling."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/YesSuccessState.tsx",
+          "operation": "modify",
+          "description": "Add a ‘Free Passes’ section styled as redeemable coupon/cards. Always show non-explicit passes (Kiss Pass, Feet Pass, Whatever you say) and conditionally render the explicit ‘Dick Pass’ only when Spicy (18+) mode is enabled. Use shadcn-ui Card/Button primitives (already in the project) and responsive layout classes (stack on mobile, grid/row on desktop). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Pass the current Spicy (18+) mode state into YesSuccessState so the explicit pass rendering is correctly gated in the post-Yes success screen."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-an-explicit-user-controlled-toggle-for-spicy-18-mode-so-that-dirty-spicy-jokes-and-the-adult-themed-free-passes-content-are-only-shown-after-the-user-intentionally-enables-the-toggle-default-off-all-user-facing-text-must-be-in-clear-english",
+      "featureTitle": "Add an explicit, user-controlled toggle for “Spicy (18+) mode” so that dirty/spicy jokes and the adult-themed “free passes” content are only shown after the user intentionally enables the toggle (default OFF). All user-facing text must be in clear English.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/valentine/QuestionState.tsx",
+        "frontend/src/hooks/useSpicyMode.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-small-set-of-dirty-spicy-jokes-english-to-the-valentine-experience-shown-only-when-spicy-18-mode-is-enabled-integrate-them-into-an-existing-ui-surface-e-g-an-optional-reveal-card-similar-to-the-sweet-note-interaction-so-they-feel-playful-and-do-not-disrupt-the-core-yes-no-flow",
+      "featureTitle": "Add a small set of dirty/spicy jokes (English) to the Valentine experience, shown only when Spicy (18+) mode is enabled. Integrate them into an existing UI surface (e.g., an optional reveal card similar to the “sweet note” interaction), so they feel playful and do not disrupt the core Yes/No flow.",
+      "files": [
+        "frontend/src/components/valentine/QuestionExtras.tsx",
+        "frontend/src/components/valentine/QuestionState.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-enhance-the-no-path-so-it-feels-like-no-is-not-an-option-and-more-stuff-happens-when-no-is-pressed-while-keeping-the-flow-usable-and-not-confusing-escalate-messaging-and-interactions-based-on-how-many-times-the-user-attempts-to-say-no",
+      "featureTitle": "Enhance the “No” path so it feels like “no is not an option” and “more stuff happens” when No is pressed, while keeping the flow usable and not confusing. Escalate messaging and interactions based on how many times the user attempts to say No.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/valentine/NoPlayfulState.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-make-the-no-button-harder-to-click-on-the-main-question-screen-by-adding-a-playful-evasive-behavior-e-g-shifting-position-on-hover-tap-near-pointer-that-escalates-with-repeated-attempts-while-still-allowing-it-to-be-clicked-eventually",
+      "featureTitle": "Make the “No” button harder to click on the main question screen by adding a playful evasive behavior (e.g., shifting position on hover/tap/near-pointer) that escalates with repeated attempts, while still allowing it to be clicked eventually.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/valentine/QuestionState.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-explicit-ending-line-that-says-i-love-you-in-the-success-ending-content-post-yes-in-clear-english",
+      "featureTitle": "Add an explicit ending line that says “I love you” in the success/ending content (post-Yes), in clear English.",
+      "files": [
+        "frontend/src/components/valentine/YesSuccessState.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-playful-free-passes-coupon-style-section-in-the-post-yes-success-state-that-includes-the-requested-passes-e-g-dick-pass-kiss-pass-feet-pass-and-a-whatever-you-say-card-the-adult-themed-passes-must-only-be-shown-when-spicy-18-mode-is-enabled-non-explicit-passes-may-be-shown-regardless",
+      "featureTitle": "Add a playful “free passes” / coupon-style section in the post-Yes success state that includes the requested passes (e.g., “Dick Pass”, “Kiss Pass”, “Feet Pass”, and a “Whatever you say” card). The adult-themed passes must only be shown when Spicy (18+) mode is enabled; non-explicit passes may be shown regardless.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/valentine/YesSuccessState.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

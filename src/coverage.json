@@ -1,0 +1,109 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-12T13:32:36.461Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 6,
+    "implemented": 6,
+    "items": [
+      {
+        "id": "REQ-12",
+        "summary": "Add an explicit, user-controlled toggle for “Spicy (18+) mode” so that dirty/spicy jokes and the adult-themed “free passes” content are only shown after the user intentionally enables the toggle (default OFF). All user-facing text must be in clear English.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useSpicyMode.ts",
+          "frontend/src/App.tsx",
+          "frontend/src/components/valentine/QuestionState.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useSpicyMode.ts",
+          "frontend/src/App.tsx",
+          "frontend/src/components/valentine/QuestionState.tsx"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Add a small set of dirty/spicy jokes (English) to the Valentine experience, shown only when Spicy (18+) mode is enabled. Integrate them into an existing UI surface (e.g., an optional reveal card similar to the “sweet note” interaction), so they feel playful and do not disrupt the core Yes/No flow.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/valentine/QuestionExtras.tsx",
+          "frontend/src/components/valentine/QuestionState.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/valentine/QuestionExtras.tsx",
+          "frontend/src/components/valentine/QuestionState.tsx"
+        ]
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Enhance the “No” path so it feels like “no is not an option” and “more stuff happens” when No is pressed, while keeping the flow usable and not confusing. Escalate messaging and interactions based on how many times the user attempts to say No.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/valentine/NoPlayfulState.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/valentine/NoPlayfulState.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Make the “No” button harder to click on the main question screen by adding a playful evasive behavior (e.g., shifting position on hover/tap/near-pointer) that escalates with repeated attempts, while still allowing it to be clicked eventually.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/valentine/QuestionState.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/valentine/QuestionState.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Add an explicit ending line that says “I love you” in the success/ending content (post-Yes), in clear English.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/valentine/YesSuccessState.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/valentine/YesSuccessState.tsx"
+        ]
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Add a playful “free passes” / coupon-style section in the post-Yes success state that includes the requested passes (e.g., “Dick Pass”, “Kiss Pass”, “Feet Pass”, and a “Whatever you say” card). The adult-themed passes must only be shown when Spicy (18+) mode is enabled; non-explicit passes may be shown regardless.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/valentine/YesSuccessState.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/valentine/YesSuccessState.tsx",
+          "frontend/src/App.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/components/valentine/NoPlayfulState.tsx",
+    "frontend/src/components/valentine/QuestionExtras.tsx",
+    "frontend/src/components/valentine/QuestionState.tsx",
+    "frontend/src/components/valentine/YesSuccessState.tsx",
+    "frontend/src/hooks/useSpicyMode.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

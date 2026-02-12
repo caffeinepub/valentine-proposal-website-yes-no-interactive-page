@@ -1,2 +1,3 @@
-# valentine-proposal-website-yes-no-interactive-page
-Exported from Caffeine project: Valentine Proposal Website (Yes/No Interactive Page)
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

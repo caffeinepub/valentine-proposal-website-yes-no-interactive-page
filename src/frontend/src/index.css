@@ -1,0 +1,298 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1rem;
+        
+        /* Romantic color palette - Light mode */
+        --background: 0.98 0.015 15;
+        --foreground: 0.25 0.02 15;
+        --card: 1 0.01 15;
+        --card-foreground: 0.25 0.02 15;
+        --popover: 1 0.01 15;
+        --popover-foreground: 0.25 0.02 15;
+        --primary: 0.55 0.18 15;
+        --primary-foreground: 0.99 0.01 15;
+        --secondary: 0.96 0.02 15;
+        --secondary-foreground: 0.25 0.02 15;
+        --muted: 0.95 0.015 15;
+        --muted-foreground: 0.50 0.02 15;
+        --accent: 0.60 0.20 15;
+        --accent-foreground: 0.99 0.01 15;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.99 0.01 15;
+        --border: 0.90 0.02 15;
+        --input: 0.90 0.02 15;
+        --ring: 0.60 0.18 15;
+        
+        /* Custom romantic tokens */
+        --romantic-light: 0.98 0.02 15;
+        --romantic-medium: 0.92 0.03 20;
+        --romantic-dark: 0.85 0.04 25;
+        --romantic-accent: 0.58 0.20 15;
+        --romantic-accent-dark: 0.50 0.22 15;
+        --romantic-heading: 0.30 0.03 15;
+        --romantic-text: 0.40 0.02 15;
+        --romantic-muted: 0.70 0.05 15;
+        --romantic-border: 0.88 0.03 15;
+        --romantic-card: 1 0.01 15;
+    }
+
+    .dark {
+        --background: 0.20 0.02 15;
+        --foreground: 0.95 0.01 15;
+        --card: 0.25 0.02 15;
+        --card-foreground: 0.95 0.01 15;
+        --popover: 0.22 0.02 15;
+        --popover-foreground: 0.95 0.01 15;
+        --primary: 0.65 0.18 15;
+        --primary-foreground: 0.15 0.02 15;
+        --secondary: 0.30 0.02 15;
+        --secondary-foreground: 0.95 0.01 15;
+        --muted: 0.30 0.02 15;
+        --muted-foreground: 0.65 0.02 15;
+        --accent: 0.45 0.02 15;
+        --accent-foreground: 0.95 0.01 15;
+        --destructive: 0.60 0.20 25;
+        --destructive-foreground: 0.15 0.02 15;
+        --border: 0.35 0.02 15;
+        --input: 0.35 0.02 15;
+        --ring: 0.55 0.15 15;
+        
+        /* Custom romantic tokens - Dark mode */
+        --romantic-light: 0.25 0.02 15;
+        --romantic-medium: 0.30 0.03 20;
+        --romantic-dark: 0.35 0.04 25;
+        --romantic-accent: 0.65 0.20 15;
+        --romantic-accent-dark: 0.58 0.22 15;
+        --romantic-heading: 0.90 0.01 15;
+        --romantic-text: 0.80 0.01 15;
+        --romantic-muted: 0.55 0.05 15;
+        --romantic-border: 0.40 0.03 15;
+        --romantic-card: 0.25 0.02 15;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    }
+}
+
+@layer utilities {
+    /* Custom animations */
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scale-in {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+        20%, 40%, 60%, 80% { transform: translateX(5px); }
+    }
+
+    @keyframes wiggle {
+        0%, 100% { transform: rotate(-5deg); }
+        50% { transform: rotate(5deg); }
+    }
+
+    @keyframes float-up {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes pulse-slow {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+    }
+
+    @keyframes bounce-slow {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @keyframes ping-slow {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        75%, 100% {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+
+    @keyframes tap-heart {
+        0% {
+            transform: translate(-50%, -50%) scale(0) rotate(0deg);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        100% {
+            transform: translate(-50%, -150%) scale(1.5) rotate(20deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes tap-kiss {
+        0% {
+            transform: translate(-50%, -50%) scale(0) rotate(0deg);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        100% {
+            transform: translate(-50%, -150%) scale(1.2) rotate(-15deg);
+            opacity: 0;
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.6s ease-out;
+    }
+
+    .animate-scale-in {
+        animation: scale-in 0.5s ease-out;
+    }
+
+    .animate-shake {
+        animation: shake 0.5s ease-in-out;
+    }
+
+    .animate-wiggle {
+        animation: wiggle 1s ease-in-out infinite;
+    }
+
+    .animate-float-up {
+        animation: float-up 4s ease-in-out forwards;
+    }
+
+    .animate-pulse-slow {
+        animation: pulse-slow 2s ease-in-out infinite;
+    }
+
+    .animate-bounce-slow {
+        animation: bounce-slow 2s ease-in-out infinite;
+    }
+
+    .animate-ping-slow {
+        animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .animate-tap-heart {
+        animation: tap-heart 1.5s ease-out forwards;
+    }
+
+    .animate-tap-kiss {
+        animation: tap-kiss 1.5s ease-out forwards;
+    }
+
+    /* Custom color utilities */
+    .bg-romantic-light {
+        background-color: oklch(var(--romantic-light));
+    }
+
+    .bg-romantic-medium {
+        background-color: oklch(var(--romantic-medium));
+    }
+
+    .bg-romantic-dark {
+        background-color: oklch(var(--romantic-dark));
+    }
+
+    .bg-romantic-accent {
+        background-color: oklch(var(--romantic-accent));
+    }
+
+    .bg-romantic-accent-dark {
+        background-color: oklch(var(--romantic-accent-dark));
+    }
+
+    .bg-romantic-muted {
+        background-color: oklch(var(--romantic-muted));
+    }
+
+    .bg-romantic-card {
+        background-color: oklch(var(--romantic-card));
+    }
+
+    .text-romantic-heading {
+        color: oklch(var(--romantic-heading));
+    }
+
+    .text-romantic-text {
+        color: oklch(var(--romantic-text));
+    }
+
+    .text-romantic-accent {
+        color: oklch(var(--romantic-accent));
+    }
+
+    .text-romantic-accent-dark {
+        color: oklch(var(--romantic-accent-dark));
+    }
+
+    .text-romantic-muted {
+        color: oklch(var(--romantic-muted));
+    }
+
+    .border-romantic-border {
+        border-color: oklch(var(--romantic-border));
+    }
+
+    .border-romantic-accent {
+        border-color: oklch(var(--romantic-accent));
+    }
+
+    .fill-romantic-accent {
+        fill: oklch(var(--romantic-accent));
+    }
+}
